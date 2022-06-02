@@ -1,0 +1,86 @@
+@use 'partials';
+@use 'sass:math';
+/* Variables */
+$font-stack: Helvetica, sans-serif;
+$primary-color: rgb(66, 170, 244);
+
+div {
+    background-color: $primary-color;
+    font: 100% $font-stack;
+}
+
+/* Nesting */
+nav {
+    background-color: $primary-color;
+    margin-bottom: 15px;
+    
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    li {
+        display: inline-block;
+        padding: 20px;
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
+        padding: 20px;
+    }
+}
+
+/* Modules */
+span {
+    background-color: partials.$warning-color;
+}
+
+/* Mixin */
+@mixin theme( $effect, $theme: DarkGray) {
+    background-color: $theme;
+    box-shadow: 5px 5px 15px $effect;
+    color: aqua;
+}
+
+#mixin-test {
+    height: 100px;
+    width: 100px;
+    @include theme($primary-color);
+    margin: 20px;
+}
+
+/* Extend/Inheritance*/
+%message-shared {
+    border: 1px solid rgb(231, 87, 186);
+    padding: 5px;
+    color: rgb(16, 56, 36);
+}
+
+%equal-hights {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.message {
+    @extend %message-shared;
+}
+
+/* Operators */
+.container {
+    display: flex;
+}
+
+article {
+    width: 220px;
+    height: 220px;
+    @extend %message-shared
+}
+
+article[role="main"] {
+    width: math.div(800px, 1000px) * 100%;
+}
+
+
+

@@ -1,0 +1,68 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Variables */
+div {
+  background-color: rgb(66, 170, 244);
+  font: 100% Helvetica, sans-serif;
+}
+
+/* Nesting */
+nav {
+  background-color: rgb(66, 170, 244);
+  margin-bottom: 15px;
+}
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav li {
+  display: inline-block;
+  padding: 20px;
+}
+nav a {
+  text-decoration: none;
+  color: black;
+  padding: 20px;
+}
+
+/* Modules */
+span {
+  background-color: rgb(237, 233, 100);
+}
+
+/* Mixin */
+#mixin-test {
+  height: 100px;
+  width: 100px;
+  background-color: DarkGray;
+  box-shadow: 5px 5px 15px rgb(66, 170, 244);
+  color: aqua;
+  margin: 20px;
+}
+
+/* Extend/Inheritance*/
+article, .message {
+  border: 1px solid rgb(231, 87, 186);
+  padding: 5px;
+  color: rgb(16, 56, 36);
+}
+
+/* Operators */
+.container {
+  display: flex;
+}
+
+article {
+  width: 220px;
+  height: 220px;
+}
+
+article[role=main] {
+  width: 80%;
+}
+
+/*# sourceMappingURL=index.css.map */
